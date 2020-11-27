@@ -1,0 +1,68 @@
+<!-- 
+<app-header [content]="pageContent.header"></app-header>
+<p>{{newCoffee.name}}</p>
+<p>{{newCoffee.flavours}}</p>
+<section id="details">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>{{newCoffee.name}}</h2>
+          <p class="lead">{{newCoffee.flavours}}</p>
+          <p class="lead">{{newCoffee.description}}</p>
+          <p class="lead">{{newCoffee.origin.town}}, {{newCoffee.origin.state}}, {{newCoffee.origin.country}}.</p>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <div *ngIf="coffee" class="col-md-6">
+    <h2 *ngIf="coffee._id">Coffee Details</h2>
+    <h2 *ngIf="!coffee._id">Add New Coffee</h2>
+  </div>
+
+  <form *ngIf="coffee">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input [(ngModel)]="coffee.name" class="form-control" id="name" name="name" required="required">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="flavours">Flavours</label>
+            <input [(ngModel)]="coffee.flavours" class="form-control" id="flavours" name="flavours"
+                required="required">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="description">Description</label>
+            <input [(ngModel)]="coffee.description" class="form-control" id="description" name="description"
+                required="required">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="price">Price</label>
+            <input [(ngModel)]="coffee.price" id="price" class="form-control" name="price" required="required">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="town">Town</label>
+            <input [(ngModel)]="coffee.origin.town" id="town" class="form-control" name="town" required="required">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="state">State</label>
+            <input [(ngModel)]="coffee.origin.state" class="form-control" id="state" name="state"
+                required="required">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="country">Country</label>
+            <input [(ngModel)]="coffee.origin.country" class="form-control" id="country" name="country"
+                required="required">
+        </div>
+    </div>
+
+    <button class="btn btn-primary" *ngIf="!coffee._id" (click)="createCoffee(coffee)">Create</button>
+    <button class="btn btn-info" *ngIf="coffee._id" (click)="updateCoffee(coffee)">Update</button>
+    <button class="btn btn-danger" *ngIf="coffee._id" (click)="deleteCoffee(coffee._id)">Delete</button>
+
+    <!-- <button type="submit" class="btn btn-primary">Create</button> -->
+</form>

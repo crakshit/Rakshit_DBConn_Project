@@ -1,0 +1,22 @@
+extends layout
+block content
+    main.container(role='main')
+        h2 Here is list of coffees from Database
+        h2 &nbsp
+        table.table
+            thead
+              tr
+                th(scope='col') #
+                th(scope='col') Name
+                th(scope='col') Flavours
+                th(scope='col') 
+            tbody
+            - var i=1
+            each coffee in coffees
+              tr
+                th(scope='row')= i++
+                td= coffee.name
+                td= coffee.flavours
+                td 
+                    a.btn.btn-primary(href=`/coffee/${coffee._id}`)= 'View'
+        a.btn.btn-primary(href='/new')= "Add New Coffee"
