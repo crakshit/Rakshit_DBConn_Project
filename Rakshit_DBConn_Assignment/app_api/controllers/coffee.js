@@ -21,11 +21,10 @@ module.exports.createCoffee = function (req, res) {
         flavours: req.body.flavours,
         description: req.body.description,
         price: parseFloat(req.body.price),
-        origin: {
-            town: req.body.town,
-            state: req.body.state,
-            country: req.body.country
-        }
+        town: req.body.town,
+        state: req.body.state,
+        country: req.body.country
+
     }, (err, data) => {
         console.log(data);
         if (err) {
@@ -98,14 +97,13 @@ module.exports.updateCoffee = function (req, res) {
                 return;
             }
             data.name = req.body.name,
-        data.flavours = req.body.flavours.split(','),
-        data.description = req.body.description,
-        data.price = parseFloat(req.body.price),
-        data.origin = {
-            town: req.body.town,
-            state: req.body.state,
-            country: req.body.country
-        }
+                data.flavours = req.body.flavours,
+                data.description = req.body.description,
+                data.price = parseFloat(req.body.price),
+                data.town = req.body.town,
+                data.state = req.body.state,
+                data.country = req.body.country
+
             data.save((err, data) => {
                 if (err) {
                     res

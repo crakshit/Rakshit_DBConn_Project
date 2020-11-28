@@ -9,7 +9,7 @@
           <h2>{{newCoffee.name}}</h2>
           <p class="lead">{{newCoffee.flavours}}</p>
           <p class="lead">{{newCoffee.description}}</p>
-          <p class="lead">{{newCoffee.origin.town}}, {{newCoffee.origin.state}}, {{newCoffee.origin.country}}.</p>
+          <p class="lead">{{newCoffee.town}}, {{newCoffee.state}}, {{newCoffee.country}}.</p>
         </div>
       </div>
     </div>
@@ -46,16 +46,16 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="town">Town</label>
-            <input [(ngModel)]="coffee.origin.town" id="town" class="form-control" name="town" required="required">
+            <input [(ngModel)]="coffee.town" id="town" class="form-control" name="town" required="required">
         </div>
         <div class="form-group col-md-4">
             <label for="state">State</label>
-            <input [(ngModel)]="coffee.origin.state" class="form-control" id="state" name="state"
+            <input [(ngModel)]="coffee.state" class="form-control" id="state" name="state"
                 required="required">
         </div>
         <div class="form-group col-md-4">
             <label for="country">Country</label>
-            <input [(ngModel)]="coffee.origin.country" class="form-control" id="country" name="country"
+            <input [(ngModel)]="coffee.country" class="form-control" id="country" name="country"
                 required="required">
         </div>
     </div>

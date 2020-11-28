@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 export class Coffee {
     _id?: string;
@@ -6,9 +6,8 @@ export class Coffee {
     flavours: string;
     description: string;
     price: string;
-    origin: {
-        town: string;
-        state: string;
-        country: string;
-    };
+    town: string;
+    state: string;
+    country: string;
+
 }

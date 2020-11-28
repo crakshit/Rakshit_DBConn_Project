@@ -1,6 +1,15 @@
-<div class="container">
-  <div class="col-md-12" id="spacer" style="margin: 50px 0;">
+<div class="col-md-12" id="spacer" style="margin: 55px 0;">
+</div>
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>Coffee Details</h1>
+    <p class="lead">You can view, add, update and delete coffee information here.</p>
   </div>
+</header>
+<div class="container">
+  <div class="col-md-12" id="spacer" style="margin: 30px 0;">
+  </div>
+
   <div class="row">
     <div class="col-md-4">
       <div class="container">
@@ -13,7 +22,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let coffee of coffees;" (click)="selectCoffee(coffee)"
-              [class.active]="coffee === selectedCoffee">
+                [class.active]="coffee === selectedCoffee">
                 <td>
                   {{coffee.name}}
                 </td>
@@ -29,7 +38,7 @@
       <div class="container">
         <div class="row">
           <app-details-page [coffee]="selectedCoffee" [createHandler]="addCoffee" [updateHandler]="updateCoffee"
-          [deleteHandler]="deleteCoffee"></app-details-page>
+            [deleteHandler]="deleteCoffee"></app-details-page>
         </div>
       </div>
     </div>

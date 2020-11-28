@@ -14,16 +14,16 @@ export class HomeListComponent implements OnInit {
   coffees: Coffee[]
   selectedCoffee: Coffee
 
-  constructor( private coffeeService: CoffeeServiceService) { }
+  constructor(private coffeeService: CoffeeServiceService) { }
 
   ngOnInit(): void {
     this.coffeeService
-    .getCoffees()
-    .then((coffees: Coffee[])=>{
-      this.coffees = coffees.map(coffee =>{
-        return coffee;
+      .getCoffees()
+      .then((coffees: Coffee[]) => {
+        this.coffees = coffees.map(coffee => {
+          return coffee;
+        });
       });
-    });
   }
 
   private getIndexofCoffee = (coffeeId: String) => {
@@ -43,15 +43,13 @@ export class HomeListComponent implements OnInit {
       flavours: '',
       description: '',
       price: '',
-      origin: {
-        town: '',
-        state: '',
-        country: '',
-      },
+      town: '',
+      state: '',
+      country: '',
     };
 
     this.selectCoffee(coffee);
-	
+
   }
 
   deleteCoffee = (coffeeId: String) => {
@@ -64,11 +62,11 @@ export class HomeListComponent implements OnInit {
   }
 
   addCoffee = (coffee: Coffee) => {
- 
-	if (coffee.name != '' && coffee.flavours != ''){
-		this.coffees.push(coffee);
+
+    if (coffee.name != '' && coffee.flavours != '') {
+      this.coffees.push(coffee);
     }
-	this.selectCoffee(coffee);
+    this.selectCoffee(coffee);
     return this.coffees;
   }
 
