@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //var indexRouter = require('./app_server/routes/index');
-var usersRouter = require('./app_server/routes/users');
+//var usersRouter = require('./app_server/routes/users');
 
 
 var db = require('./app_api/models/db');
@@ -36,7 +36,7 @@ app.use('/api', function(req, res, next) {
 
 
 //app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 //API Router
 app.use('/api', apiRouter);
 
